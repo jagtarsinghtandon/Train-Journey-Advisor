@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ArrayOfCities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<Cities>
+<Concession>No Concession</Concession>
+</Cities>
+
+<Cities>
+<Source>Delhi</Source>
+<Concession>Senior Citizen (20% Discount)</Concession>
+<TicketType>Single Journey</TicketType>
+
+</Cities>
+
+<Cities>
+<Source>Jaipur</Source>
+<Concession>Child under 6 years (50% Discount)</Concession>
+<TicketType>Return Journey</TicketType>
+</Cities>
+
+<Cities>
+<Source>Bhopal</Source>
+</Cities>
+
+<Cities>
+<Source>Mumbai</Source>
+</Cities>
+
+<Cities>
+<Source>Hyderabad</Source>
+</Cities>
+
+<Cities>
+<Source>Bangalore</Source>
+</Cities>
+
+</ArrayOfCities>
+

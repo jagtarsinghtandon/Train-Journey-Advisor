@@ -1,0 +1,21 @@
+﻿<Window x:Class="Train.PrintTicket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Train"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="" Height="345.106" Width="617.894">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="58*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="Txt_Receipt" HorizontalAlignment="Left" Height="283" Margin="0,42,0,-11" TextWrapping="Wrap"  VerticalAlignment="Top" Width="610" HorizontalContentAlignment="Center" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Travelling Ticket" VerticalAlignment="Top" Height="42" Width="610" FontSize="20" FontFamily="Times New Roman" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Background="LightGray" Grid.ColumnSpan="2" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\bin\Debug\Train.exe.config
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\bin\Debug\Train.exe
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\bin\Debug\Train.pdb
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.csprojAssemblyReference.cache
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\App.g.cs
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train_MarkupCompile.cache
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train_MarkupCompile.lref
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.g.resources
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.Properties.Resources.resources
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.csproj.GenerateResource.cache
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.csproj.CoreCompileInputs.cache
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.exe
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\Train.pdb
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\MainWindow.g.cs
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\MainWindow.baml
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\PrintTicket.g.cs
+C:\Users\Jagtar\source\repos\Train_Journey_Advisor\Train\obj\Debug\PrintTicket.baml

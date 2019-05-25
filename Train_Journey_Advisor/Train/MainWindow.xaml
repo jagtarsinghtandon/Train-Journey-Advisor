@@ -1,0 +1,276 @@
+﻿<Window x:Class="Train.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Train"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="" Height="537" Width="715">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Train_Image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="-4"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Train_Image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="151"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="247"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseUp1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Train_Image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-38.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="73.333"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="14"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Train_Image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="56.667"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="192"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.9" Value="245.333"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Delhi_Jaipur">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Margin="0,0,281,-2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="127*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Height="48" VerticalAlignment="Top" Background="LightBlue" HorizontalAlignment="Left" Width="710" Margin="0,0,-284,0">
+            <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Train Journey Advisor" Height="43" FontSize="36" FontFamily="Sylfaen" FontWeight="Bold"/>
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,51,212,64"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,61,0,6" HorizontalAlignment="Left" Width="196" Grid.Row="1"/>
+        <Button Content="Print Ticket" Click="Print_Click" Margin="30,224,326,8" ToolTip="Click to print the ticket" RenderTransformOrigin="0.327,1.078" Grid.Row="1" Height="22"/>
+        <Button Content="Book Ticket" Click="Button_Click" Margin="116,223,238,9" ToolTip="Click to book the ticket" RenderTransformOrigin="0.327,1.078" Grid.Row="1" Height="22"/>
+        <ComboBox  Name="Cbx_Source" HorizontalAlignment="Left" Margin="103,61,0,0" Width="96" SelectionChanged="Cbx_Source_SelectionChanged" Height="19" VerticalAlignment="Top" FontSize="11"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,62,0,0" TextWrapping="Wrap" Text="Source" VerticalAlignment="Top" Height="17" Width="64"/>
+        <ComboBox  Name="Cbx_Destination" HorizontalAlignment="Left" Margin="103,90,0,0" VerticalAlignment="Top" Width="96" SelectionChanged="Cbx_Destination_SelectionChanged" Height="19"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,91,0,0" TextWrapping="Wrap" Text="Destination" VerticalAlignment="Top" Height="17" Width="73"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,122,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Height="17" Width="64"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,72,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="17" Width="64" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,105,0,0" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" Height="18" Width="64" Grid.Row="1"/>
+        <TextBox Name="Tbx_Age"  HorizontalAlignment="Left" Margin="103,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="96" FontSize="11" Background="White" Foreground="Black" Grid.Row="1"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="18,166,0,0" TextWrapping="Wrap" Text="Ticket Type" VerticalAlignment="Top" Height="18" Width="80" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.008"/>
+                    <RotateTransform Angle="-0.155"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="18,135,0,0" TextWrapping="Wrap" Text="Concession" VerticalAlignment="Top" Height="17" Width="80" Grid.Row="1"/>
+        <ComboBox Name="Cbx_Ticket_Type" SelectionChanged="Cbx_Ticket_Type_SelectionChanged" HorizontalAlignment="Left" Margin="103,165,0,0" VerticalAlignment="Top" Width="96" Height="19" Grid.Row="1"/>
+        <TextBox Name="Tbx_Name"  HorizontalAlignment="Left" Margin="103,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="96" FontSize="14" Background="White" Grid.Row="1"  />
+        <ComboBox Name="Cbx_Concession" SelectionChanged="Cbx_Concession_SelectionChanged" HorizontalAlignment="Left" Margin="103,134,0,0" VerticalAlignment="Top" Width="96" Height="19" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,198,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Height="17" Width="80" Grid.Row="1"/>
+        <TextBox Name="Tbx_Total" Text="&#x20b9;" PreviewTextInput="Tbx_Total_PreviewTextInput"  HorizontalAlignment="Left" Margin="103,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" Width="97" FontSize="11" Background="White" Foreground="Black" Grid.Row="1" IsReadOnly="True"/>
+        <StackPanel HorizontalAlignment="Left" Margin="446,224,-423,-8" Width="588" ToolTip="Click to get different routes" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+        </StackPanel>
+        <Canvas Name="Cvs_map" HorizontalAlignment="Left" Height="436" Margin="206,48,-87,0" VerticalAlignment="Top" Width="492" Grid.RowSpan="2">
+
+            <Image Source="Images/map.gif" Stretch="Fill" Height="461" Width="495" Canvas.Left="10" Canvas.Top="-1"/>
+            <Ellipse Name="Elp_Delhi" ToolTip="Delhi" Fill="#FF4B4BE8" Height="12" Canvas.Left="172" Stroke="Black" Canvas.Top="150" Width="12" MouseUp="Elp_Delhi_MouseUp" RenderTransformOrigin="-0.13,0.625" />
+            <Ellipse Name="Elp_Bhopal" ToolTip="Bhopal" Fill="#FF4B4BE8" Height="12" Canvas.Left="203" Stroke="Black" Canvas.Top="216" Width="12" MouseUp="Elp_Bhopal_MouseUp" StrokeThickness="1.8" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-7.613"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Name="Elp_Hyderabad" ToolTip="Hyderabad" Fill="#FF4B4BE8" Height="12" Canvas.Left="202" Stroke="Black" Canvas.Top="292" Width="12" MouseUp="Elp_Hyderabad_MouseUp" RenderTransformOrigin="0.087,-2.5"/>
+            <Ellipse Name="Elp_Bangalore" ToolTip="Bangalore" Fill="#FF4B4BE8" Height="12" Canvas.Left="162" Stroke="Black" Canvas.Top="342" Width="12" MouseUp="Elp_Bangalore_MouseUp"/>
+            <Ellipse Name="Elp_Mumbai" ToolTip="Mumbai" Fill="#FF4B4BE8" Height="12" Canvas.Left="102" Stroke="Black" Canvas.Top="268" Width="12" RenderTransformOrigin="0.08,2.403" MouseUp="Elp_Mumbai_MouseUp"/>
+            <Ellipse Name="Elp_Jaipur" ToolTip="Jaipur" Fill="#FF4B4BE8" Height="12" Canvas.Left="138" Stroke="Black" Canvas.Top="180" Width="12" MouseUp="Elp_Jaipur_MouseUp"/>
+            <Line Name="Bhopal_Hyderabad"  X1 = "20 " Y1 = "5" X2 = "50" Y2 = "120" Fill = "#FFC80909" 
+                    Height = "65" Width = "27" Canvas.Left = "197" 
+                    Canvas.Top = "219" StrokeThickness = "3" Stretch = "Fill" Stroke = "#FF18BB18"
+                    RenderTransformOrigin = "-0.222,0.518" x:FieldModifier="public" ToolTip="175" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="22.661"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line Name="Bhopal_Mumbai" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="82" Width="73" Canvas.Left="221" Canvas.Top="228" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="230">
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="24.116"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line Name="Jaipur_Mumbai" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="81" Width="38" Canvas.Left="160" Canvas.Top="189" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" IsHitTestVisible="False" ToolTip="250" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line Name="Delhi_Jaipur" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="28" Width="28" Canvas.Left="188" Canvas.Top="158" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" MinHeight="6" ToolTip="100"  >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Mumbai_Bangalore" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="89" Width="28" Canvas.Left="157" Canvas.Top="249" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" ToolTip="300" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1.04" ScaleY="0.961"/>
+                        <SkewTransform AngleY="-3.007"/>
+                        <RotateTransform Angle="-55.402"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Delhi_Bhopal"   X1 = "20 " Y1 = "5" X2 = "50" Y2 = "120" Fill = "#FFC80909" 
+                Height = "59" Width = "32" Canvas.Left = "178" 
+                Canvas.Top = "159" StrokeThickness = "3" Stretch = "Fill" Stroke = "#FF18BB18"
+                RenderTransformOrigin = "-0.222,0.518" x:FieldModifier="public" ToolTip="120" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="2.265"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Hyderabad_Bangalore"   X1 = "20 " Y1 = "5" X2 = "50" Y2 = "120" Fill = "#FFC80909" 
+                Height = "49" Width = "35" Canvas.Left = "222" 
+                Canvas.Top = "301" StrokeThickness = "3" Stretch = "Fill" Stroke = "#FF18BB18"
+                RenderTransformOrigin = "-0.222,0.518" x:FieldModifier="public" ToolTip="200" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="3.801"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Mumbai_Hyderabad" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="19" Width="96" Canvas.Left="242" Canvas.Top="304" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="220">
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="24.116"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Jaipur_Bhopal" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="36" Width="62" Canvas.Left="144" Canvas.Top="188" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="220"  >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.16"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Jaipur_Hyderabad" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="108" Width="64" Canvas.Left="143" Canvas.Top="188" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="390" />
+            <Line x:Name="Jaipur_Bangalore" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="158" Width="27" Canvas.Left="142" Canvas.Top="188" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="500" />
+            <Line x:Name="Bhopal_Bangalore" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="121" Width="42" Canvas.Left="228" Canvas.Top="225" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="300" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <ListView Name="Lbx_Routes" SelectionChanged="Lbx_Routes_SelectionChanged" DisplayMemberPath="route" Background="White" Height="84" Canvas.Left="-196"  Canvas.Top="162" Width="196" RenderTransformOrigin="-0.1,1.346" ToolTip="Please select one to view a path"/>
+
+            <ListBox Name="Lbx_Route" Background="LightGray" Height="109" Canvas.Left="326"  Canvas.Top="317" Width="107" SelectionChanged="Lbx_Route_SelectionChanged" ToolTip="Select any city to add another one before it" Visibility="Hidden">
+
+            </ListBox>
+            <Image  Name="Train_Image" Height="52" Source="train.png" Stretch="Fill" Width="53" Canvas.Left="138" RenderTransformOrigin="0.453,0.202" Canvas.Top="98">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Line x:Name="Mumbai_Delhi" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="114" Width="69" Canvas.Left="208" Canvas.Top="160" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="345" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Delhi_Bangalore" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="184" Width="13" Canvas.Left="186" Canvas.Top="160" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="450" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Line x:Name="Delhi_Hyderabad" X1="20 " Y1="5" X2="50" Y2="120" Fill="#FFC80909" Height="132" Width="29" Canvas.Left="179" Canvas.Top="162" StrokeThickness="3" Stretch="Fill" Stroke="#FF18BB18" RenderTransformOrigin="-0.222,0.518" x:FieldModifier="public" ToolTip="330" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.198"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <TextBlock Canvas.Left="321" TextWrapping="Wrap" Text="INDIA" Canvas.Top="68" Height="33" Width="56" FontSize="18"/>
+
+
+        </Canvas>
+        <TextBlock HorizontalAlignment="Left" Margin="11,191,0,0" TextWrapping="Wrap" Text="All Routes" VerticalAlignment="Top" Height="17" Width="62"/>
+        <TextBlock Name="Tbx_Final_Route" HorizontalAlignment="Left" Margin="533,105,-201,0" TextWrapping="Wrap" Text="Selected Route" VerticalAlignment="Top" Height="17" Width="94" Grid.Row="1" Visibility="Hidden"/>
+        <DatePicker Name="Date" HorizontalAlignment="Left" Margin="103,121,0,0" VerticalAlignment="Top" Width="96" Focusable="False"/>
+        <Button Content="Search" Click="Btn_Search" ToolTip="Click to get different routes" Margin="116,152,238,66" RenderTransformOrigin="0.327,1.078" Height="22"/>
+    </Grid>
+
+</Window>
